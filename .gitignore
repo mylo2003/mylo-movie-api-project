@@ -128,3 +128,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+# extras
+
+src/
+
+package-lock.json
+package.json
+tailwind.config.js

@@ -22,48 +22,33 @@ const swiper = new Swiper(".swiperHome", {
   },
 });
 
-const swiperCategories = new Swiper(".swiperCategories", {
-  slidesPerView: 3,
-  spaceBetween: 30,
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 3,
-      spaceBetween: 20,
+
+const swiperMain = new Swiper(".swiperMain", {
+  grabCursor: true,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-120%", 0, -500],
     },
-    768: {
-      slidesPerView: 4,
-      spaceBetween: 20,
-    },
-    1024: {
-      slidesPerView: 8,
-      spaceBetween: 30,
+    next: {
+      shadow: true,
+      translate: ["120%", 0, -500],
     },
   },
 });
 
-const swiperMain = new Swiper(".swiperMain", {
-  effect: "cards",
-  spaceBetween: 20,
-  pagination: {
-    el: ".swiper-pagination",
-    dynamicBullets: true,
-  },
+
+const swiperCategories = new Swiper(".swiperCategories", {
+  slidesPerView: 'auto',
+  grabCursor: true,
+  centeredSlides: true,
   breakpoints: {
-    640: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
     768: {
-      slidesPerView: 1,
-      spaceBetween: 20,
+      slidesPerView: 3,
     },
     1024: {
-      slidesPerView: 3,
-      spaceBetween: 30,
+      slidesPerView: 5,
     },
   },
 });

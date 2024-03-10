@@ -4,20 +4,29 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
       <link rel="stylesheet" href="./css/index.css">
       <title>Mylo Movies</title>
   </head>
-  <body class="bg-gradient-to-b from-[#742E8D] to-black">
+  <body class="bg-gradient-to-b from-[#742E8D] to-black" style="font-family: 'Nunito', sans-serif;">
     <header>
-      <nav class="lg:hidden">
+      <div class="lg:hidden relative">
         <div class="h-10 m-10 flex justify-between items-center bg-[#7B5996] rounded-xl p-1 shadow-xl md:h-14">
           <h1 class="z-10 text-white text-xl font-semibold ml-1 md:ml-3 md:text-2xl">MYLO MOVIES</h1>
-          <button class="w-[40px] h-[40px] mr-3 flex items-center">
-            <i class="bx bx-menu text-4xl text-white md:text-5xl"></i>
+          <button id="menu-icon" class="w-[40px] h-[40px] mr-3 flex items-center">
+            <i id="icon" class="bx bx-menu text-4xl text-white md:text-5xl"></i>
           </button>
         </div>
-      </nav>
+        <nav class="nav-list lg:hidden list-none text-white font-semibold absolute top-12 -right-full w-full h-[100vh] backdrop-blur-sm bg-[#7B5996]/80 z-20 flex items-center gap-10 flex-col p-20 transition-all duration-500 ease-in-out md:text-2xl">
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="#trending">Trending</a></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="#categories">Categories</a></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">Suggestions</a></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">All Movies</a></li>
+        </nav>
+      </div>
       <div class="hidden lg:flex w-full h-20 shadow-xl backdrop-blur-xl bg-[#261a32] items-center justify-between px-40">
         <a href="#"><h1 class="z-10 text-white text-2xl font-semibold">MYLO MOVIES</h1></a>
         <nav class="ml-10 w-[400px] flex justify-between list-none text-white font-semibold">
@@ -30,7 +39,7 @@
     </header>
 
     <main class="max-w-xl mx-auto md:max-w-2xl md:mx-auto lg:max-w-7xl lg:mx-auto">
-      <section>
+      <section id="banner">
         <div class="swiper swiperMain px-5">
           <div class="swiper-wrapper">
             <div class="swiper-slide w-[332px] h-[430px] bg-white mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[500px] md:my-14 lg:w-full">
@@ -43,7 +52,7 @@
         </div>
         <form class="mx-auto flex justify-center md:mb-10">
           <input class="w-[210px] h-[45px] mr-3 bg-[#7B5996] shadow-inner rounded-3xl md:w-[332px] md:h-[50px] hover:cursor-pointer placeholder:text-center placeholder:text-2xl placeholder:font-semibold placeholder:text-[#D5D4FF] transition-all duration-300 ease-in-out lg:w-[450px] focus:lg:w-[500px] focus:md:w-[390px] focus:w-[250px]" type="text" placeholder="Search">
-          <button><i class='bx bx-search-alt-2 text-3xl text-white md:text-4xl'></i></button>
+          <button><i class='bx bx-search-alt-2 text-3xl text-white md:text-4xl transition-all ease-in-out duration-200 hover:text-purple-500'></i></button>
         </form>
       </section>
 
@@ -78,8 +87,8 @@
         </div>
       </section>
 
-      <section id="trending" class="flex flex-col justify-center">
-        <article class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-red-200 px-5">
+      <section class="flex flex-col justify-center">
+        <article id="trending" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-red-200 px-5">
           <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Trending</h2>
           <div class="swiper swiperHome">
             <div class="swiper-wrapper">
@@ -140,7 +149,7 @@
           </div>
         </article>
 
-        <article class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-yellow-200 px-5">
+        <article id="comedy" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-yellow-200 px-5">
           <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Comedy</h2>
           <div class="swiper swiperHome">
             <div class="swiper-wrapper">
@@ -180,7 +189,7 @@
           </div>
         </article>
 
-        <article class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-orange-200 px-5">
+        <article id="drama" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-orange-200 px-5">
           <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Drama</h2>
           <div class="swiper swiperHome">
             <div class="swiper-wrapper">
@@ -220,7 +229,7 @@
           </div>
         </article>
 
-        <article class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-gray-800 px-5">
+        <article id="horror" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-gray-800 px-5">
           <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Horror</h2>
           <div class="swiper swiperHome">
             <div class="swiper-wrapper">
@@ -266,6 +275,8 @@
       <h4 class="font-semibold">Made by Camilo</h4>
       <a href="https://github.com/mylo2003/mylo-movie-api-project" target="_blank"><i class='bx bxl-github ml-2 text-xl'></i></a>
     </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script type="module" src="./js/main.js"></script>

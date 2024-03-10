@@ -52,3 +52,40 @@ const swiperCategories = new Swiper(".swiperCategories", {
     },
   },
 });
+
+
+const sr = ScrollReveal ({
+  distance: '50px',
+  duration: 1000,
+  reset: false
+}); 
+
+
+sr.reveal('#banner', {delay: 200, origin: 'top'});
+sr.reveal('#categories', {delay: 200, origin: 'left'});
+sr.reveal('#trending', {delay: 200, origin: 'top'});
+sr.reveal('#comedy', {delay: 200, origin: 'top'});
+sr.reveal('#drama', {delay: 200, origin: 'top'});
+sr.reveal('#horror', {delay: 200, origin: 'top'});
+
+const menu = document.querySelector('#menu-icon');
+const i = document.querySelector('#icon');
+const navList = document.querySelector('.nav-list');
+const etiquetas = document.querySelectorAll('.e');
+
+function cerrar () {
+  i.classList.toggle('bx-x');
+
+  if(navList.classList.contains('-right-full')){
+    navList.classList.replace('-right-full', 'right-0');
+  } else {
+    navList.classList.replace('right-0', '-right-full');
+  }
+}
+
+menu.addEventListener('click', cerrar);
+
+etiquetas.forEach(element => {
+  element.addEventListener('click', cerrar);
+});
+

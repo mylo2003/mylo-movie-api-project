@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth overscroll-x-none overflow-x-hidden">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,8 @@
       <link rel="stylesheet" href="./css/index.css">
       <title>Mylo Movies</title>
   </head>
-  <body class="bg-gradient-to-b from-[#742E8D] to-black" style="font-family: 'Nunito', sans-serif;">
+  <body class="bg-gradient-to-b  from-[#742E8D] to-black" style="font-family: 'Nunito', sans-serif;">
+    
     <header>
       <div class="lg:hidden relative">
         <div class="h-10 m-10 flex justify-between items-center bg-[#7B5996] rounded-xl p-1 shadow-xl md:h-14">
@@ -20,7 +21,7 @@
             <i id="icon" class="bx bx-menu text-4xl text-white md:text-5xl"></i>
           </button>
         </div>
-        <nav class="nav-list lg:hidden list-none text-white font-semibold absolute top-12 -right-full w-full h-[100vh] backdrop-blur-sm bg-[#7B5996]/80 z-20 flex items-center gap-10 flex-col p-20 transition-all duration-500 ease-in-out md:text-2xl">
+        <nav class="nav-list lg:hidden list-none text-white font-semibold absolute -top-full w-full h-[100vh] backdrop-blur-sm bg-[#7B5996]/80 z-20 hidden items-center gap-10 flex-col p-20  transition-all duration-500 ease-in-out md:text-2xl">
           <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="#trending">Trending</a></li>
           <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="#categories">Categories</a></li>
           <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">Suggestions</a></li>
@@ -41,13 +42,20 @@
     <main class="max-w-xl mx-auto md:max-w-2xl md:mx-auto lg:max-w-7xl lg:mx-auto">
       <section id="banner">
         <div class="swiper swiperMain px-5">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide w-[332px] h-[430px] bg-white mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[500px] md:my-14 lg:w-full">
+          <div id="contenedor_banner" class="swiper-wrapper">
+            
+            <!--
+            <div class="swiper-slide flex lg:bg-[#261a32]/80 rounded-3xl my-4">
+              <div class="w-[332px] h-[400px] bg-white mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">
+                <img class="w-full h-full rounded-3xl" src="">
+              </div>
+              <div class="hidden lg:flex flex-col w-[525px] h-[400px] my-20">
+                <h2 class="text-4xl mb-3 text-white font-bold">Titulo <span class="text-xl text-yellow-500 font-thin">4 / 10</span></h2>
+                <p class="text-balance text-xl text-white">Descripcion</p>
+              </div>
             </div>
-            <div class="swiper-slide w-[332px] h-[430px] bg-blue-300 mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[500px] md:my-14 lg:w-full">
-            </div>
-            <div class="swiper-slide w-[332px] h-[430px] bg-red-200 mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[500px] md:my-14 lg:w-full">
-            </div>
+            --> 
+            
           </div>
         </div>
         <form class="mx-auto flex justify-center md:mb-10">
@@ -57,32 +65,13 @@
       </section>
 
       <section id="categories">
-        <div class="swiper swiperCategories mx-5 mt-10 md:mt-14 md:mb-12">
-            <div class="swiper-wrapper flex justify-evenly gap-3 py-10">       
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>      
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px]">
-                <button class="w-full h-full bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">Comedy</button>
-              </div>  
+        <div class="swiper swiperCategories">
+            <div id="generos" class="swiper-wrapper py-10">       
+              <!--
+              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">
+                <button class="py-3">Comedy</button>
+              </div>
+              -->
             </div>
         </div>
       </section>
@@ -91,56 +80,18 @@
         <article id="trending" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-red-200 px-5">
           <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Trending</h2>
           <div class="swiper swiperHome">
-            <div class="swiper-wrapper">
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
-              <div class="swiper-slide flex justify-center gap-4 my-10 md:gap-10">
-                <div class="w-[155px] h-[205px] bg-white rounded-3xl md:w-[190px] md:h-[250px]"></div>
-                <div class="w-[140px] md:w-[200px]">
-                  <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                  <p class="text-balance px-2 text-white md:text-xl lg:text-xl"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet 3asgaefae.</p>
-                </div>  
-              </div>
+            <div id="contenedor-trending" class="swiper-wrapper">
+              <!--
+                <div class="swiper-slide flex justify-center">
+                  <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src=""></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
+                      <p class="text-white text-center">Rate: <span class="text-base text-yellow-500 font-normal">4 / 10</span></p>
+                    </div>  
+                  </div>
+                </div>
+              -->
             </div>
             <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
           </div>
@@ -279,6 +230,9 @@
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="./js/effects.js"></script>
+    <script type="module" src="./js/navigation.js"></script>
     <script type="module" src="./js/main.js"></script>
   </body>
 </html>

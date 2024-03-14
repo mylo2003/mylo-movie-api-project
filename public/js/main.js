@@ -84,14 +84,12 @@ export async function getTrendingMoviesPreview () {
 
     movies.forEach(movie => {
       contenedor_trending.innerHTML += `
-
-          
           <div class="swiper-slide flex justify-center">
           <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
             <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-            <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+            <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px] sm:mb-2">
               <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">${movie.title}</h3>
-              <p class="text-white text-center">Rate: <span class="text-base  font-normal">${movie.vote_average} / 10</span></p>
+              <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">${movie.vote_average} / 10</span></p>
             </div>  
           </div>
         </div>

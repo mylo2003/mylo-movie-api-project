@@ -1,13 +1,7 @@
 import { getBannerMain, getCategoriesPreview, getTrendingMoviesPreview  } from "/public/js/main.js";
 
-/* Navegacion */
-
-const menu = document.querySelector('#menu-icon');
-const i = document.querySelector('#icon');
-const navList = document.querySelector('.nav-list');
-const etiquetas = document.querySelectorAll('.e');
-
-function abrirCerrar () {
+/* Menu mobile and Tablet */
+function abrirCerrarMenu () {
   i.classList.toggle('bx-x');
 
   if(navList.classList.contains('-top-full')){
@@ -18,52 +12,57 @@ function abrirCerrar () {
     navList.classList.replace('flex', 'hidden');
   }
 }
-
-menu.addEventListener('click', abrirCerrar);
+menu.addEventListener('click', abrirCerrarMenu);
 
 etiquetas.forEach(element => {
-  element.addEventListener('click', abrirCerrar);
+  element.addEventListener('click', abrirCerrarMenu);
 });
 
-window.addEventListener('DOMContentLoaded', navigator);
-window.addEventListener('hashchange', navigator);
 
-function navigator () {
+
+const navigator = () => {
   console.log({ location });
-  if(location.hash.startsWith('#trends')) {
-    trendsPage();
-  } else if (location.hash.startsWith('#search=')) {
-    searchPage();
-  } else if (location.hash.startsWith('#movie=')) {
-    movieDetailsPage();
-  } else if (location.hash.startsWith('#category=')) {
-    categoriesPage();
-  } else {
-    homePage ();
+
+  const HASHES = {
+    '#trends'    : () => trendsPage(),
+    '#search='   : () => searchPage(),
+    '#movie='    : () => movieDetailsPage(),
+    '#category=' : () => categoriesPage()
+  };
+
+  for (const KEY of Object.keys(HASHES)) {
+    if(location.hash.startsWith(KEY)) {
+      HASHES[KEY]();
+
+      return;
+    }
   }
+
+  homePage();
 }
 
-
-function homePage () {
-  console.log('Home!!!');
+const homePage = () => {
+  location.hash = '#home';
   getBannerMain();
   getCategoriesPreview();
   getTrendingMoviesPreview();
 }
 
-function categoriesPage () {
-  console.log('Category!!!');
-}
+const categoriesPage = () => {
+  location.hash = '#category=';
+};
 
-function movieDetailsPage () {
-  console.log('Movie!!!');
-}
+const movieDetailsPage = () => {
+  location.hash = '#movie=';
+};
 
-function searchPage () {
-  console.log('Search!!!');
-}
+const searchPage = () => {
+  location.hash = '#search=';
+};
 
-function trendsPage () {
-  console.log('Trends!!!');
-}
+const trendsPage = () => {
+  location.hash = '#trends';
+};
 
+window.addEventListener('load', navigator, false);
+window.addEventListener('hashchange', navigator, false);

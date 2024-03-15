@@ -11,7 +11,13 @@ const api = axios.create({
     'api_key': API_KEY,
   },
 });
-  
+
+swiperMain();
+swiperCategories();
+swiperSection();
+
+const contenedor_banner = document.querySelector('#contenedor_banner');
+
 export async function getBannerMain () {
   try { 
     const { data, status } = await api('movie/top_rated');
@@ -20,14 +26,10 @@ export async function getBannerMain () {
 
     const banners = data.results;
 
-    console.log(banners);
-
-    const contenedor_banner = document.querySelector('#contenedor_banner');
-
+    contenedor_banner.innerHTML = '';
     
     banners.forEach(banner => {
       contenedor_banner.innerHTML += `
-
         <div class="swiper-slide flex lg:bg-[#261a32]/80 backdrop-blur-md rounded-3xl my-4">
           <div class="w-[332px] h-[400px] mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">
             <img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w500/${banner.poster_path}">
@@ -39,11 +41,11 @@ export async function getBannerMain () {
         </div>
       `;
     });
-  
   } catch (error) {
     console.log(error);
   }
 }
+const generos = document.querySelector('#generos');
 
 export async function getCategoriesPreview () {
   try {
@@ -53,25 +55,37 @@ export async function getCategoriesPreview () {
     
     const categories = data.genres;
 
-    const generos = document.querySelector('#generos');
-
-    console.log(categories);
+    generos.innerHTML = '';
 
     categories.forEach(gener => {
       generos.innerHTML += `
-        <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">
-          <button id="${gener.id}" class="py-3">${gener.name}</button>
+        <div class="swiper-slide cate w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">
+          <button id="${gener.id}" value="${gener.name}" class="py-3">${gener.name}</button>
         </div>  
       `;
     });
-
   } catch (error) {
     console.log(error);
+  } finally {
+    const categoria = document.querySelectorAll('.cate');
+
+    categoria.forEach(element => {
+     element.firstElementChild.addEventListener('click', () => {
+        location.hash = `#category=${element.firstElementChild.id}-${element.firstElementChild.value}`;
+     });
+    });
+
+    categoria.forEach(element => {
+      element.firstElementChild.addEventListener('click', () => {
+        getMoviesByCategory(element.firstElementChild.id, element.firstElementChild.value);
+      });
+     });
   }
 }
 
-export async function getTrendingMoviesPreview () {
+const contenedor_trending = document.querySelector('#contenedor-trending');
 
+export async function getTrendingMoviesPreview () {
   try {
     const { data, status } = await api('trending/movie/day');
 
@@ -79,8 +93,7 @@ export async function getTrendingMoviesPreview () {
 
     const movies = data.results;
 
-    const contenedor_trending = document.querySelector('#contenedor-trending');
-
+    contenedor_trending.innerHTML = '';
 
     movies.forEach(movie => {
       contenedor_trending.innerHTML += `
@@ -101,4 +114,87 @@ export async function getTrendingMoviesPreview () {
   }
 }
 
+export async function getMoviesByCategory (id, name) {
+  window.scrollTo(0, 0);
+  try {
+    const { data, status } = await api('discover/movie', {
+      params: {
+        with_genres: id,
+      },
+    });
 
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerHTML = name;
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    contenedor_banner.innerHTML = '';
+    generos.innerHTML = '';
+    contenedor_trending.innerHTML = '';
+  }
+}
+
+export async function getTrendingMoviesAll () {
+  try {
+    const { data, status } = await api('trending/movie/day');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerText = 'Trending';
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    contenedor_banner.innerHTML = '';
+    generos.innerHTML = '';
+    contenedor_trending.innerHTML = '';
+  }
+}
+
+export async function getMoviesBySearch (query) {
+  window.scrollTo(0, 0);
+  query = decodeURI(query);
+  try {
+    const { data, status } = await api('search/movie', {
+      params: {
+        query,
+      },
+    });
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerText = query;
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    contenedor_banner.innerHTML = '';
+    generos.innerHTML = '';
+    contenedor_trending.innerHTML = '';
+  }
+}
+
+function genericList (data) {
+  const movies_list = document.getElementById('movies-list');
+  const titulo_categoria = document.getElementById('titulo_categoria');
+  const movies = data.results;
+
+  titulo_categoria.innerHTML = '';
+  movies_list.innerHTML = '';
+
+  movies.forEach(movie => {
+    movies_list.innerHTML += `
+      <div class="w-[150px] h-[230px] bg-white rounded-3xl lg:w-[180px] lg:h-[260px]">
+        <img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}}">
+      </div>
+    `;
+  });
+}

@@ -1,19 +1,19 @@
 /* EFECTOS */
-const sr = ScrollReveal ({
-    distance: '50px',
-    duration: 1000,
-    reset: false
-  }); 
-  
-  
-  sr.reveal('#banner', {delay: 200, origin: 'top'});
-  sr.reveal('#categories', {delay: 300, origin: 'left'});
-  sr.reveal('#trending', {delay: 300, origin: 'top'});
-  sr.reveal('#comedy', {delay: 300, origin: 'top'});
-  sr.reveal('#drama', {delay: 300, origin: 'top'});
-  sr.reveal('#horror', {delay: 300, origin: 'top'});
-  
-  const swiper = new Swiper(".swiperHome", {
+const sr = ScrollReveal({
+  distance: "50px",
+  duration: 1000,
+  reset: false,
+});
+
+sr.reveal("#banner", { delay: 200, origin: "top" });
+sr.reveal("#categories", { delay: 300, origin: "left" });
+sr.reveal("#trending", { delay: 300, origin: "top" });
+sr.reveal("#comedy", { delay: 300, origin: "top" });
+sr.reveal("#drama", { delay: 300, origin: "top" });
+sr.reveal("#horror", { delay: 300, origin: "top" });
+
+const swiperSection = () => {
+  new Swiper(".swiperHome", {
     grabCursor: true,
     slidesPerView: "auto",
     spaceBetween: 10,
@@ -33,9 +33,10 @@ const sr = ScrollReveal ({
       },
     },
   });
-  
-  
-  const swiperMain = new Swiper(".swiperMain", {
+};
+
+const swiperMain = () => {
+  new Swiper(".swiperMain", {
     grabCursor: true,
     effect: "creative",
     creativeEffect: {
@@ -49,12 +50,12 @@ const sr = ScrollReveal ({
       },
     },
   });
-  
-  
-  const swiperCategories = new Swiper(".swiperCategories", {
+};
+
+const swiperCategories = () => {
+  new Swiper(".swiperCategories", {
     grabCursor: true,
     slidesPerView: "auto",
     spaceBetween: 30,
   });
-  
-  
+};

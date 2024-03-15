@@ -619,6 +619,16 @@ video {
   margin-bottom: 1rem;
 }
 
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
 .mb-2 {
   margin-bottom: 0.5rem;
 }
@@ -777,6 +787,18 @@ video {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[200px\] {
+  width: 200px;
+}
+
+.w-\[250px\] {
+  width: 250px;
+}
+
+.w-\[500px\] {
+  width: 500px;
 }
 
 .max-w-xl {
@@ -963,6 +985,11 @@ video {
 .py-5 {
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 .text-center {

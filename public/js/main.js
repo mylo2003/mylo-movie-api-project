@@ -20,7 +20,7 @@ const contenedor_banner = document.querySelector('#contenedor_banner');
 
 export async function getBannerMain () {
   try { 
-    const { data, status } = await api('movie/top_rated');
+    const { data, status } = await api('movie/top_rated?page=2');
 
     if (status !== 200) throw Error('Error: ' + status);
 
@@ -91,23 +91,67 @@ export async function getTrendingMoviesPreview () {
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    const movies = data.results;
+    genericPreview(contenedor_trending, data);
 
-    contenedor_trending.innerHTML = '';
+  } catch (error) {
+    console.log(error);
+  }
+}
 
-    movies.forEach(movie => {
-      contenedor_trending.innerHTML += `
-          <div class="swiper-slide flex justify-center">
-          <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
-            <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-            <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px] sm:mb-2">
-              <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">${movie.title}</h3>
-              <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">${movie.vote_average} / 10</span></p>
-            </div>  
-          </div>
-        </div>
-      `;
-    });
+const contenedor_nowPlaying = document.querySelector('#contenedor-nowPlaying');
+
+export async function getNowPlayingMoviesPreview () {
+  try {
+    const { data, status } = await api('movie/now_playing');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericPreview(contenedor_nowPlaying, data);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const contenedor_popular = document.querySelector('#contenedor-popular');
+
+export async function getPopularMoviesPreview () {
+  try {
+    const { data, status } = await api('movie/popular');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericPreview(contenedor_popular, data);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const contenedor_toprated = document.querySelector('#contenedor-toprated');
+
+export async function getTopRatedMoviesPreview () {
+  try {
+    const { data, status } = await api('movie/top_rated?page=5');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericPreview(contenedor_toprated, data);
+
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+const contenedor_upcoming = document.querySelector('#contenedor-upcoming');
+
+export async function getUpcomingMoviesPreview () {
+  try {
+    const { data, status } = await api('movie/upcoming');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericPreview(contenedor_upcoming , data);
 
   } catch (error) {
     console.log(error);
@@ -132,9 +176,7 @@ export async function getMoviesByCategory (id, name) {
   } catch (error) {
     console.log(error);
   } finally {
-    contenedor_banner.innerHTML = '';
-    generos.innerHTML = '';
-    contenedor_trending.innerHTML = '';
+    refresh ();
   }
 }
 
@@ -151,11 +193,78 @@ export async function getTrendingMoviesAll () {
   } catch (error) {
     console.log(error);
   } finally {
-    contenedor_banner.innerHTML = '';
-    generos.innerHTML = '';
-    contenedor_trending.innerHTML = '';
+    refresh ();
   }
 }
+
+export async function getNowPlayingMoviesAll () {
+  try {
+    const { data, status } = await api('movie/now_playing');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerText = 'Now Playing';
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    refresh ();
+  }
+}
+
+export async function getPopularMoviesAll () {
+  try {
+    const { data, status } = await api('movie/popular');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerText = 'Popular';
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    refresh ();
+  }
+}
+
+export async function getTopratedMoviesAll () {
+  try {
+    const { data, status } = await api('movie/top_rated');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerText = 'Top Rated';
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    refresh ();
+  }
+}
+
+export async function getUpcomingMoviesAll () {
+  try {
+    const { data, status } = await api('movie/upcoming');
+
+    if (status !== 200) throw Error('Error: ' + status);
+
+    genericList(data);
+
+    titulo_categoria.innerText = 'Upcoming';
+
+  } catch (error) {
+    console.log(error);
+  } finally {
+    refresh ();
+  }
+}
+
 
 export async function getMoviesBySearch (query) {
   window.scrollTo(0, 0);
@@ -176,9 +285,7 @@ export async function getMoviesBySearch (query) {
   } catch (error) {
     console.log(error);
   } finally {
-    contenedor_banner.innerHTML = '';
-    generos.innerHTML = '';
-    contenedor_trending.innerHTML = '';
+    refresh ();
   }
 }
 
@@ -197,4 +304,34 @@ function genericList (data) {
       </div>
     `;
   });
+}
+
+function genericPreview (container, data) {
+  const preview = data.results;
+
+  container.innerHTML = '';
+
+  preview.forEach(movie => {
+    container.innerHTML += `
+        <div class="swiper-slide flex justify-center">
+        <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+          <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
+          <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px] sm:mb-2">
+            <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">${movie.title}</h3>
+            <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">${movie.vote_average} / 10</span></p>
+          </div>  
+        </div>
+      </div>
+    `;
+  });
+}
+
+function refresh () {
+  contenedor_banner.innerHTML = '';
+  generos.innerHTML = '';
+  contenedor_trending.innerHTML = '';
+  contenedor_nowPlaying.innerHTML = '';
+  contenedor_popular.innerHTML = '';
+  contenedor_toprated.innerHTML = '';
+  contenedor_upcoming.innerHTML = '';
 }

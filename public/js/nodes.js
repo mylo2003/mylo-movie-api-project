@@ -27,9 +27,11 @@ const main_sections = document.getElementById('main-sections');
 
 const arrowBtn = document.getElementById('arrowBtn');
 const btnSearch = document.getElementById('btnSearch');
+const btnSectionSearch = document.getElementById('btnSectionSearch');
 const seeTrendingBtn = document.getElementById('seeTrendingBtn');
+const seeMoreBtn = document.querySelectorAll('.seeMoreBtn');
 
 /* Inputs */
 
 const inputFormSearch = document.getElementById('inputFormSearch');
-
+const inputSectionSearch = document.getElementById('inputSectionSearch');

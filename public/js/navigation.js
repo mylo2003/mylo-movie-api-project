@@ -1,4 +1,4 @@
-import { getBannerMain, getCategoriesPreview, getTrendingMoviesPreview, getMoviesByCategory, getTrendingMoviesAll, getMoviesBySearch } from "/public/js/main.js";
+import { getBannerMain, getCategoriesPreview, getTrendingMoviesPreview, getNowPlayingMoviesPreview, getPopularMoviesPreview, getTopRatedMoviesPreview, getUpcomingMoviesPreview, getMoviesByCategory, getTrendingMoviesAll, getNowPlayingMoviesAll, getPopularMoviesAll, getTopratedMoviesAll, getUpcomingMoviesAll, getMoviesBySearch } from "/public/js/main.js";
 
 /* Menu mobile and Tablet */
 function abrirCerrarMenu () {
@@ -21,7 +21,7 @@ etiquetas.forEach(element => {
 
 const navigator = () => {
   const HASHES = {
-    '#trends'    : () => trendsPage(),
+    '#list='    : () => listPage(),
     '#search='   : () => searchPage(),
     '#movie='    : () => movieDetailsPage(),
     '#category=' : () => categoriesPage()
@@ -57,6 +57,10 @@ const homePage = () => {
   getBannerMain();
   getCategoriesPreview();
   getTrendingMoviesPreview();
+  getNowPlayingMoviesPreview();
+  getPopularMoviesPreview();
+  getTopRatedMoviesPreview();
+  getUpcomingMoviesPreview();
 }
 
 const categoriesPage = () => {
@@ -112,7 +116,7 @@ const searchPage = () => {
   getMoviesBySearch(query);
 };
 
-const trendsPage = () => {
+const listPage = () => {
   window.scrollTo(0, 0);
   titulo_pagina.classList.replace('hidden', 'flex');
 
@@ -128,21 +132,52 @@ const trendsPage = () => {
 
   formMovies.classList.replace('flex', 'hidden');
 
-  getTrendingMoviesAll();
+  if(location.hash == '#list=trending'){
+    getTrendingMoviesAll();
+  } else if (location.hash == '#list=nowPlaying') {
+    getNowPlayingMoviesAll();
+  } else if (location.hash == '#list=popular') {
+    getPopularMoviesAll();
+  } else if (location.hash == '#list=toprated') {
+    getTopratedMoviesAll();
+  } else if (location.hash == '#list=upcoming') {
+    getUpcomingMoviesAll();
+  }
+  
 };
 
 window.addEventListener('load', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
-seeTrendingBtn.addEventListener('click', () => {
-  location.hash = '#trends';
+
+seeMoreBtn.forEach(btn => {
+  btn.addEventListener('click', () => {
+    location.hash = `#list=${btn.value}`
+  });
 });
 
 arrowBtn.addEventListener('click', () => {
   location.hash = window.history.back();
+  inputFormSearch.value = '';
+  inputSectionSearch.value = '';
 });
 
 btnSearch.addEventListener('click', (e) => {
-  location.hash = `#search=${inputFormSearch.value.trim()}`;
-	e.preventDefault();
+  if(inputFormSearch.value == '') {
+    alert('You have to text the movie name');
+    return;
+  } else {
+    location.hash = `#search=${inputFormSearch.value.trim()}`;
+    e.preventDefault();
+  }
+});
+
+btnSectionSearch.addEventListener('click', (e) => {
+  if(inputSectionSearch.value == '') {
+    alert('You have to text the movie name');
+    return;
+  } else {
+    location.hash = `#search=${inputSectionSearch.value.trim()}`;
+    e.preventDefault();
+  }
 });

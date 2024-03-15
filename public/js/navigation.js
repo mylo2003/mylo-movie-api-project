@@ -1,5 +1,3 @@
-import { getBannerMain, getCategoriesPreview, getTrendingMoviesPreview, getNowPlayingMoviesPreview, getPopularMoviesPreview, getTopRatedMoviesPreview, getUpcomingMoviesPreview, getMoviesByCategory, getTrendingMoviesAll, getNowPlayingMoviesAll, getPopularMoviesAll, getTopratedMoviesAll, getUpcomingMoviesAll, getMoviesBySearch } from "/public/js/main.js";
-
 /* Menu mobile and Tablet */
 function abrirCerrarMenu () {
   i.classList.toggle('bx-x');
@@ -41,6 +39,7 @@ const navigator = () => {
 const homePage = () => {
   window.scrollTo(0, 0);
   location.hash = '#home';
+
   titulo_pagina.classList.replace('flex', 'hidden');
   details_section.classList.add('hidden');
   movies_section.classList.add('hidden');
@@ -53,7 +52,7 @@ const homePage = () => {
   main_sections.classList.remove('hidden');
 
   inputFormSearch.value = '';
-
+  
   getBannerMain();
   getCategoriesPreview();
   getTrendingMoviesPreview();
@@ -94,6 +93,9 @@ const movieDetailsPage = () => {
   main_banner.classList.add('hidden');
   main_categories.classList.add('hidden');
   main_sections.classList.add('hidden');
+
+  const [_, movieId] = location.hash.split('=');
+  getMovieById(movieId);
 };
 
 const searchPage = () => {
@@ -149,7 +151,6 @@ const listPage = () => {
 window.addEventListener('load', navigator, false);
 window.addEventListener('hashchange', navigator, false);
 
-
 seeMoreBtn.forEach(btn => {
   btn.addEventListener('click', () => {
     location.hash = `#list=${btn.value}`
@@ -164,7 +165,7 @@ arrowBtn.addEventListener('click', () => {
 
 btnSearch.addEventListener('click', (e) => {
   if(inputFormSearch.value == '') {
-    alert('You have to text the movie name');
+    alert('Please, type the name of the film');
     return;
   } else {
     location.hash = `#search=${inputFormSearch.value.trim()}`;
@@ -174,7 +175,7 @@ btnSearch.addEventListener('click', (e) => {
 
 btnSectionSearch.addEventListener('click', (e) => {
   if(inputSectionSearch.value == '') {
-    alert('You have to text the movie name');
+    alert('Please, type the name of the film');
     return;
   } else {
     location.hash = `#search=${inputSectionSearch.value.trim()}`;

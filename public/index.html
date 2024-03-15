@@ -9,6 +9,7 @@
       <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
       <link rel="stylesheet" href="./css/index.css">
+      <link rel="icon" href="./img/favicon.png">
       <title>Mylo Movies</title>
   </head>
   <body class="bg-gradient-to-b  from-[#742E8D] to-black" style="font-family: 'Nunito', sans-serif;">
@@ -33,24 +34,23 @@
             </div>
           </div>
         </div>
-        <nav class="nav-list lg:hidden list-none text-white font-semibold absolute -top-full w-full h-[100vh] backdrop-blur-sm bg-[#7B5996]/80 z-20 hidden items-center gap-10 flex-col p-20  transition-all duration-500 ease-in-out md:text-2xl">
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="#trending">Trending</a></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">Now Playing</a></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">Popular</a></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">Top Rated</a></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="">Upcoming</a></li>
+        <nav class="nav-list lg:top-28 lg:max-w-7xl rounded-3xl lg:p-10 list-none text-white font-semibold absolute -top-full w-full h-[100vh] backdrop-blur-sm bg-[#7B5996]/80 z-20 hidden items-center gap-10 flex-col p-20  transition-all duration-500 ease-in-out md:text-2xl">
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="trending">Trending</button></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="nowPlaying">Now Playing</button></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="popular">Popular</button></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="toprated">Top Rated</button></li>
+          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="upcoming">Upcoming</button></li>
         </nav>
       </div>
       <div id="nav-home-lg" class="hidden lg:flex w-full h-20 shadow-xl backdrop-blur-xl bg-[#261a32] items-center justify-between px-40">
-        <a href="#"><h1 class="z-10 text-white text-2xl font-semibold">MYLO MOVIES</h1></a>
+        <h1 class="z-10 text-white text-2xl font-semibold">MYLO MOVIES</h1>
         <nav class="ml-10 w-[500px] flex justify-between list-none text-white font-semibold">
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><a>Trending</a></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><a href="">Now Playing</a></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><a href="">Popular</a></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><a href="">Top Rated</a></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><a href="">Upcoming</a></li>
+          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="trending">Trending</button></li>
+          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="nowPlaying">Now Playing</button></li>
+          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="popular">Popular</button></li>
+          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="toprated">Top Rated</button></li>
+          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="upcoming">Upcoming</button></li>
         </nav>
-  
       </div>
     </header>
 
@@ -65,6 +65,24 @@
         </div>
         <article class="w-[320px] mx-auto my-10 md:w-auto lg:mx-10">
           <div id="movies-list" class="flex flex-wrap gap-3">
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
+            <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
+            </div>
             <!--
             <div class="w-[150px] h-[230px] bg-white rounded-3xl lg:w-[180px] lg:h-[260px]">
               <img class="w-full h-full rounded-3xl" src="">
@@ -74,9 +92,31 @@
         </article>
       </section>
 
-      <section  id="details-section" class="hidden">
-        <article class="my-10 mx-5 lg:flex lg:justify-center lg:items-center lg:my-0">
-          <div class="w-[332px] h-[430px] bg-white mx-auto my-10 rounded-3xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
+      <section id="details-section" class="hidden md:h-[100vh] my-10">
+        <div class="my-10 mx-5 lg:flex lg:justify-center lg:items-center lg:my-0">
+          <div class="w-[332px] h-[430px] bg-gray-500/60 mx-auto my-10 rounded-3xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
+          </div>
+          <div class="lg:w-[500px] lg:h-[500px]">
+            <div class="flex flex-col items-center">
+              <p class="mb-10 bg-gray-500/60 rounded-xl w-[300px] lg:w-[450px] h-10"></p>
+              <p class="mb-3 bg-gray-500/60 rounded-xl w-[280px] lg:w-[425px] h-7"></p>
+              <p class="mb-3 bg-gray-500/60 rounded-xl w-[280px] lg:w-[425px] h-7"></p>
+              <p class="mb-3 bg-gray-500/60 rounded-xl w-[280px] lg:w-[425px] h-7"></p>
+              <p class="mb-3 bg-gray-500/60 rounded-xl w-[280px] lg:w-[425px] h-7"></p>
+            </div>
+            <p class="bg-yellow-600/60 font-semibold ml-5 mt-5 md:ml-0"></p>
+            <div class="mt-5 h-[45px] flex justify-start gap-2 flex-auto">
+              <p class="w-[115px] h-[40px] bg-gray-500/60 rounded-full shadow-xl text-white font-semibold text-center leading-10"></p>
+              <p class="w-[115px] h-[40px] bg-gray-500/60 rounded-full shadow-xl text-white font-semibold text-center leading-10"></p>
+              <p class="w-[115px] h-[40px] bg-gray-500/60 rounded-full shadow-xl text-white font-semibold text-center leading-10"></p>
+              <p class="w-[115px] h-[40px] bg-gray-500/60 rounded-full shadow-xl text-white font-semibold text-center leading-10"></p>
+            </div>
+          </div>
+        </div>
+        <!--
+        <div class="my-10 mx-5 lg:flex lg:justify-center lg:items-center lg:my-0">
+          <div class="w-[332px] h-[430px]  mx-auto my-10 rounded-3xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
+            <img class="w-full h-full rounded-2xl" src="">
           </div>
           <div class="lg:w-[500px] lg:h-[500px]">
             <div class="text-white text-center md:text-left">
@@ -94,12 +134,24 @@
               <span class="w-[115px] h-[40px] bg-[#39234a] rounded-full shadow-xl text-white font-semibold text-center leading-10">Comedy</span>
             </div>
           </div>
-        </article>
+        </div>
+        -->
       </section>
 
       <section id="main-banner" class="">
         <div class="swiper swiperMain px-5">
           <div id="contenedor_banner" class="swiper-wrapper">
+            <div class="swiper-slide flex lg:bg-[#261a32]/80 rounded-3xl my-4">
+              <div class="w-[332px] h-[400px] bg-gray-500/60 mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">       
+              </div>
+              <div class="hidden lg:flex flex-col w-[525px] h-[400px] my-20">
+                <p class="mb-10 bg-gray-500/60 rounded-xl w-[450px] h-10"></p>
+                <p class="mb-3 bg-gray-500/60 rounded-xl w-[425px] h-7"></p>
+                <p class="mb-3 bg-gray-500/60 rounded-xl w-[425px] h-7"></p>
+                <p class="mb-3 bg-gray-500/60 rounded-xl w-[425px] h-7"></p>
+                <p class="mb-3 bg-gray-500/60 rounded-xl w-[425px] h-7"></p>
+              </div>
+            </div>
             <!--
             <div class="swiper-slide flex lg:bg-[#261a32]/80 rounded-3xl my-4">
               <div class="w-[332px] h-[400px] bg-white mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">
@@ -121,7 +173,15 @@
 
       <section id="main-categories" class="">
         <div class="swiper swiperCategories">
-            <div id="generos" class="swiper-wrapper py-10">       
+            <div id="generos" class="swiper-wrapper py-10">    
+              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide hidden md:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
               <!--
               <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">
                 <button class="py-3">Comedy</button>
@@ -135,8 +195,45 @@
         <div class="flex flex-col justify-center">
           <article id="trending" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-red-200 px-5">
             <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Trending</h2>
-              <div class="swiper swiperHome">
+              <div class="swiper swiperTrending">
                 <div id="contenedor-trending" class="swiper-wrapper">
+                  <div class="flex justify-center">
+                    <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                      <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                        <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                        <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                      </div>  
+                    </div>
+                    <div class="hidden md:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                      <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                        <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                        <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                      </div>  
+                    </div>
+                    <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                      <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                        <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                        <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                      </div>  
+                    </div>
+                    <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                      <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                        <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                        <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                      </div>  
+                    </div>
+                    <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                      <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                        <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                        <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                      </div>  
+                    </div>
+                  </div>
                   <!--
                     <div class="swiper-slide flex justify-center">
                       <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
@@ -151,15 +248,52 @@
                 </div>
                 <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
               </div>
-              <div class="flex justify-center">
+              <div class="flex justify-center mt-5">
                 <button value="trending" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
               </div>
           </article>
           
           <article id="nowPlaying" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-yellow-200 px-5">
             <h2 class="text-white text-3xl font-semibold w-[250px] ml-8 md:text-4xl">Now Playing</h2>
-            <div class="swiper swiperHome">
+            <div class="swiper swiperPlaying">
               <div id="contenedor-nowPlaying" class="swiper-wrapper">
+                <div class="flex justify-center">
+                  <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden md:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                </div>
                 <!--
                   <div class="swiper-slide flex justify-center">
                     <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
@@ -174,15 +308,52 @@
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-5">
               <button value="nowPlaying" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
 
-          <article id="popular" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-yellow-200 px-5">
+          <article id="popular" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-orange-200 px-5">
             <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Popular</h2>
-            <div class="swiper swiperHome">
+            <div class="swiper swiperPopular">
               <div id="contenedor-popular" class="swiper-wrapper">
+                <div class="flex justify-center">
+                  <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden md:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                </div>
                 <!--
                   <div class="swiper-slide flex justify-center">
                     <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
@@ -197,15 +368,52 @@
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-5 ">
               <button value="popular" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
           
-          <article id="toprated" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-orange-200 px-5">
+          <article id="toprated" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-blue-200 px-5">
             <h2 class="text-white text-3xl font-semibold w-[200px] ml-8 md:text-4xl">Top Rated</h2>
-            <div class="swiper swiperHome">
+            <div class="swiper swiperRated">
               <div id="contenedor-toprated" class="swiper-wrapper">
+                <div class="flex justify-center">
+                  <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden md:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                </div>
                 <!--
                   <div class="swiper-slide flex justify-center">
                     <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
@@ -220,15 +428,52 @@
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-5">
               <button value="toprated" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
  
           <article id="upcoming" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-gray-800 px-5">
             <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Upcoming</h2>
-            <div class="swiper swiperHome">
+            <div class="swiper swiperComing">
               <div id="contenedor-upcoming" class="swiper-wrapper">
+                <div class="flex justify-center">
+                  <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden md:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                  <div class="hidden lg:block w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
+                    <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"></div>
+                    <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
+                      <h3 class="bg-gray-500/60 rounded-full mb-4 w-[155px] h-7 md:w-[190px] "></h3>
+                      <p class=" bg-yellow-300/50 rounded-full w-[155px] h-7 md:w-[190px]"></p>
+                    </div>  
+                  </div>
+                </div>
                 <!--
                   <div class="swiper-slide flex justify-center">
                     <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
@@ -243,7 +488,7 @@
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
-            <div class="flex justify-center">
+            <div class="flex justify-center mt-5">
               <button value="upcoming" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
@@ -261,8 +506,8 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <script src="./js/effects.js"></script>
-    <script type="module" src="./js/navigation.js"></script>
-    <script type="module" src="./js/main.js"></script>
+    <script src="./js/main.js"></script>
     <script src="./js/nodes.js"></script>
+    <script src="./js/navigation.js"></script>
   </body>
 </html>

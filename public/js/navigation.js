@@ -16,7 +16,6 @@ etiquetas.forEach(element => {
   element.addEventListener('click', abrirCerrarMenu);
 });
 
-
 const navigator = () => {
   const HASHES = {
     '#list='    : () => listPage(),
@@ -37,8 +36,8 @@ const navigator = () => {
 }
 
 const homePage = () => {
+  contenedor_banner.innerHTML = '';
   window.scrollTo(0, 0);
-  location.hash = '#home';
 
   titulo_pagina.classList.replace('flex', 'hidden');
   details_section.classList.add('hidden');
@@ -52,6 +51,7 @@ const homePage = () => {
   main_sections.classList.remove('hidden');
 
   inputFormSearch.value = '';
+  loadMoreBtn.value = '1';
   
   getBannerMain();
   getCategoriesPreview();
@@ -64,7 +64,6 @@ const homePage = () => {
 
 const categoriesPage = () => {
   window.scrollTo(0, 0);
-  
   titulo_pagina.classList.replace('hidden', 'flex');
 
   nav_home_lg.classList.replace('lg:flex', 'lg:hidden');
@@ -145,7 +144,6 @@ const listPage = () => {
   } else if (location.hash == '#list=upcoming') {
     getUpcomingMoviesAll();
   }
-  
 };
 
 window.addEventListener('load', navigator, false);
@@ -153,7 +151,9 @@ window.addEventListener('hashchange', navigator, false);
 
 seeMoreBtn.forEach(btn => {
   btn.addEventListener('click', () => {
-    location.hash = `#list=${btn.value}`
+    scrollUp();
+    location.hash = `#list=${btn.value}`;
+    loadMoreBtn.value = '1';
   });
 });
 
@@ -161,6 +161,7 @@ arrowBtn.addEventListener('click', () => {
   location.hash = window.history.back();
   inputFormSearch.value = '';
   inputSectionSearch.value = '';
+  loadMoreBtn.value = '1';
 });
 
 btnSearch.addEventListener('click', (e) => {
@@ -182,3 +183,34 @@ btnSectionSearch.addEventListener('click', (e) => {
     e.preventDefault();
   }
 });
+
+loadMoreBtn.addEventListener('click', () => {
+  const url = location.hash;
+  const indexEqual = url.indexOf("=");
+  const indexDash = url.indexOf("-", indexEqual);
+  const numero = url.substring(indexEqual + 1, indexDash);
+  const palabra = url.substring(indexDash + 1);
+
+  const [_, query] = location.hash.split('=');
+
+  loadMoreBtn.value = parseInt(loadMoreBtn.value) + 1;
+  if(location.hash == '#list=trending'){
+    getTrendingMoviesAll(loadMoreBtn.value, false);
+  } else if (location.hash == '#list=nowPlaying') {
+    getNowPlayingMoviesAll(loadMoreBtn.value, false);
+  } else if (location.hash == '#list=popular') {
+    getPopularMoviesAll(loadMoreBtn.value, false);
+  } else if (location.hash == '#list=toprated') {
+    getTopratedMoviesAll(loadMoreBtn.value, false);
+  } else if (location.hash == '#list=upcoming') {
+    getUpcomingMoviesAll(loadMoreBtn.value, false);
+  } else if (location.hash == `#category=${numero}-${palabra}`) {
+    getMoviesByCategory(numero, palabra, loadMoreBtn.value, false);
+  } else if (location.hash == `#search=${query}`) {
+    getMoviesBySearch(query, loadMoreBtn.value, false);
+  }
+});
+
+function scrollUp() {
+  window.scrollTo(0, 0);
+}

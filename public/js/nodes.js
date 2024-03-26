@@ -30,6 +30,7 @@ const btnSearch = document.getElementById('btnSearch');
 const btnSectionSearch = document.getElementById('btnSectionSearch');
 const seeTrendingBtn = document.getElementById('seeTrendingBtn');
 const seeMoreBtn = document.querySelectorAll('.seeMoreBtn');
+const loadMoreBtn = document.querySelector('.loadMoreBtn');
 
 /* Inputs */
 

@@ -13,10 +13,11 @@ sr.reveal("#popular", { delay: 300, origin: "top" });
 sr.reveal("#toprated", { delay: 300, origin: "top" });
 sr.reveal("#upcoming", { delay: 300, origin: "top" });
 
-const swiperTrending = () => {
-  new Swiper(".swiperTrending", {
+const swiperSection = () => {
+  new Swiper(".swiperSection", {
     grabCursor: true,
     slidesPerView: "auto",
+    centeredSlides: true,
     spaceBetween: 10,
     pagination: {
       el: ".swiper-pagination",
@@ -24,113 +25,23 @@ const swiperTrending = () => {
     },
     breakpoints: {
       640: {
-        slidesPerView: 1,
+        spaceBetween: 20,
+        slidesPerView: "auto",
       },
       768: {
-        slidesPerView: 2,
+        centeredSlides: false,
+        slidesPerView: "auto",
       },
       1024: {
-        slidesPerView: 5,
+        centeredSlides: false,
+        slidesPerView: "auto",
       },
     },
   });
 };
 
-const swiperPlaying = () => {
-  new Swiper(".swiperPlaying", {
-    grabCursor: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 5,
-      },
-    },
-  });
-};
-
-const swiperPopular = () => {
-  new Swiper(".swiperPopular", {
-    grabCursor: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 5,
-      },
-    },
-  });
-};
-
-const swiperRated = () => {
-  new Swiper(".swiperRated", {
-    grabCursor: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 5,
-      },
-    },
-  });
-};
-
-const swiperComing = () => {
-  new Swiper(".swiperComing", {
-    grabCursor: true,
-    slidesPerView: "auto",
-    spaceBetween: 10,
-    pagination: {
-      el: ".swiper-pagination",
-      dynamicBullets: true,
-    },
-    breakpoints: {
-      640: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      1024: {
-        slidesPerView: 5,
-      },
-    },
-  });
-};
-
-const swiperMain = () => {
-  new Swiper(".swiperMain", {
-    loop: true,
+const swiperBanner = () => {
+  new Swiper(".swiperBanner", {
     grabCursor: true,
     effect: "creative",
     creativeEffect: {

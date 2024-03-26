@@ -12,7 +12,8 @@ const api = axios.create({
   },
 });
 
-//Utils
+swiperSection();
+swiperBanner();
 
 const lazyLoader = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -27,17 +28,18 @@ const contenedor_banner = document.querySelector('#contenedor_banner');
 
 async function getBannerMain () {
   try { 
-    const { data, status } = await api('movie/top_rated?page=2');
+    const { data, status } = await api('movie/top_rated?page=3');
 
     if (status !== 200) throw Error('Error: ' + status);
 
     const banners = data.results;
 
+   
     contenedor_banner.innerHTML = '';
 
     banners.forEach(banner => {
       contenedor_banner.innerHTML += `
-        <div class="swiper-slide flex lg:bg-[#261a32]/80 backdrop-blur-md rounded-3xl my-4">
+        <div class="swiper-slide flex lg:bg-[#261a32]/80 backdrop-blur-md rounded-3xl">
           <div id="${banner.id}" class="card w-[332px] h-[400px] bg-gray-500/60 mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">
             <img class="w-full h-full rounded-3xl" data-img="https://image.tmdb.org/t/p/w500/${banner.poster_path}">
           </div>
@@ -60,11 +62,8 @@ async function getBannerMain () {
 
   } catch (error) {
     console.log(error);
-  } finally {
-    swiperMain();
   }
 }
-const generos = document.querySelector('#generos');
 
 async function getCategoriesPreview () {
   try {
@@ -74,6 +73,7 @@ async function getCategoriesPreview () {
     
     const categories = data.genres;
 
+    const generos = document.querySelector('#generos');
     generos.innerHTML = '';
 
     categories.forEach(gener => {
@@ -83,6 +83,7 @@ async function getCategoriesPreview () {
         </div>  
       `;
     });
+
   } catch (error) {
     console.log(error);
   } finally {
@@ -98,13 +99,11 @@ async function getCategoriesPreview () {
       element.firstElementChild.addEventListener('click', () => {
         getMoviesByCategory(element.firstElementChild.id, element.firstElementChild.value);
       });
-     });
+    });
 
     swiperCategories();
   }
 }
-
-const contenedor_trending = document.querySelector('#contenedor-trending');
 
 async function getTrendingMoviesPreview () {
   try {
@@ -112,16 +111,13 @@ async function getTrendingMoviesPreview () {
 
     if (status !== 200) throw Error('Error: ' + status);
 
+    const contenedor_trending = document.querySelector('#contenedor-trending');
     genericPreview(contenedor_trending, data);
 
   } catch (error) {
     console.log(error);
-  } finally {
-    swiperTrending();
   }
 }
-
-const contenedor_nowPlaying = document.querySelector('#contenedor-nowPlaying');
 
 async function getNowPlayingMoviesPreview () {
   try {
@@ -129,16 +125,13 @@ async function getNowPlayingMoviesPreview () {
 
     if (status !== 200) throw Error('Error: ' + status);
 
+    const contenedor_nowPlaying = document.querySelector('#contenedor-nowPlaying');
     genericPreview(contenedor_nowPlaying, data);
 
   } catch (error) {
     console.log(error);
-  } finally {
-    swiperPlaying();
   }
 }
-
-const contenedor_popular = document.querySelector('#contenedor-popular');
 
 async function getPopularMoviesPreview () {
   try {
@@ -146,16 +139,13 @@ async function getPopularMoviesPreview () {
 
     if (status !== 200) throw Error('Error: ' + status);
 
+    const contenedor_popular = document.querySelector('#contenedor-popular');
     genericPreview(contenedor_popular, data);
 
   } catch (error) {
     console.log(error);
-  } finally {
-    swiperPopular();
   }
 }
-
-const contenedor_toprated = document.querySelector('#contenedor-toprated');
 
 async function getTopRatedMoviesPreview () {
   try {
@@ -163,16 +153,13 @@ async function getTopRatedMoviesPreview () {
 
     if (status !== 200) throw Error('Error: ' + status);
 
+    const contenedor_toprated = document.querySelector('#contenedor-toprated');
     genericPreview(contenedor_toprated, data);
 
   } catch (error) {
     console.log(error);
-  } finally {
-    swiperRated();
   }
 }
-
-const contenedor_upcoming = document.querySelector('#contenedor-upcoming');
 
 async function getUpcomingMoviesPreview () {
   try {
@@ -180,140 +167,147 @@ async function getUpcomingMoviesPreview () {
 
     if (status !== 200) throw Error('Error: ' + status);
 
+    const contenedor_upcoming = document.querySelector('#contenedor-upcoming');
     genericPreview(contenedor_upcoming , data);
 
   } catch (error) {
     console.log(error);
-  } finally {
-    swiperComing();
   }
 }
 
-async function getMoviesByCategory (id, name) {
+async function getMoviesByCategory (id, name, page, clean = true) {
   try {
     const { data, status } = await api('discover/movie', {
       params: {
         with_genres: id,
+        page,
       },
     });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerHTML = name;
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-async function getTrendingMoviesAll () {
+async function getTrendingMoviesAll (page, clean = true) {
   try {
-    const { data, status } = await api('trending/movie/day');
+    const { data, status } = await api('trending/movie/day', {
+      params: {
+        page,
+      }
+    });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerText = 'Trending';
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-async function getNowPlayingMoviesAll () {
+async function getNowPlayingMoviesAll (page, clean = true) {
   try {
-    const { data, status } = await api('movie/now_playing');
+    const { data, status } = await api('movie/now_playing', {
+      params: {
+        page,
+      }
+    });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerText = 'Now Playing';
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-async function getPopularMoviesAll () {
+async function getPopularMoviesAll (page, clean = true) {
   try {
-    const { data, status } = await api('movie/popular');
+    const { data, status } = await api('movie/popular', {
+      params: {
+        page,
+      }
+    });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerText = 'Popular';
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-async function getTopratedMoviesAll () {
+async function getTopratedMoviesAll (page, clean = true) {
   try {
-    const { data, status } = await api('movie/top_rated');
+    const { data, status } = await api('movie/top_rated', {
+      params: {
+        page,
+      }
+    });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerText = 'Top Rated';
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-async function getUpcomingMoviesAll () {
+async function getUpcomingMoviesAll (page, clean = true) {
   try {
-    const { data, status } = await api('movie/upcoming');
+    const { data, status } = await api('movie/upcoming', {
+      params: {
+        page,
+      }
+    });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerText = 'Upcoming';
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-async function getMoviesBySearch (query) {
+async function getMoviesBySearch (query, page, clean = true) {
   query = decodeURI(query);
   try {
     const { data, status } = await api('search/movie', {
       params: {
         query,
+        page,
       },
     });
 
     if (status !== 200) throw Error('Error: ' + status);
 
-    genericList(data);
+    genericList(data, clean);
 
     titulo_categoria.innerText = query;
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
@@ -357,18 +351,18 @@ async function getMovieById (id) {
 
   } catch (error) {
     console.log(error);
-  } finally {
-    contenedor_banner.innerHTML = '';
   }
 }
 
-function genericList (data) {
+function genericList (data, clean) {
   const movies_list = document.getElementById('movies-list');
   const titulo_categoria = document.getElementById('titulo_categoria');
   const movies = data.results;
 
-  titulo_categoria.innerHTML = '';
-  movies_list.innerHTML = '';
+  if (clean){
+    titulo_categoria.innerHTML = '';
+    movies_list.innerHTML = '';
+  }
 
   movies.forEach(movie => {
     movies_list.innerHTML += `
@@ -402,7 +396,7 @@ function genericPreview (container, data) {
 
   preview.forEach(movie => {
     container.innerHTML += `
-      <div class="swiper-slide flex justify-center">
+      <div class="swiper-slide flex justify-center w-[240px]">
         <div id=${movie.id} class="card flex flex-col justify-center items-center w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8 cursor-pointer">
           <div class="w-[155px] h-[205px] mb-2 bg-gray-500/60 rounded-3xl md:w-[190px] md:h-[250px]"><img class="movieImg w-full h-full rounded-3xl" data-img="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
           <div class="w-[200px] h-[205px] md:w-[195px] md:h-[250px] sm:mb-2">

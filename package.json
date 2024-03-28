@@ -1,0 +1,21 @@
+{
+  "name": "mylo-movie-api-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/css/index.css -o ./public/css/index.css --watch"
+  },
+  "keywords": [],
+  "author": "Camio Mora",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "swiper": "^11.0.7"
+  }
+}

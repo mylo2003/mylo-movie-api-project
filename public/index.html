@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth overscroll-x-none overflow-x-hidden">
+<html lang="en" class="scroll-smooth overscroll-x-none overflow-x-hidden">
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,60 +12,60 @@
       <link rel="icon" href="./img/favicon.png">
       <title>Mylo Movies</title>
   </head>
-  <body class="bg-gradient-to-b  from-[#742E8D] to-black" style="font-family: 'Nunito', sans-serif;">
+  <body class="bg-gradient-to-b from-gray-900 to-black" style="font-family: 'Nunito', sans-serif;">
     <header class="sticky top-10 z-10 lg:top-0">
-      <div id="nav-home-sm" class="max-w-xl mx-auto md:max-w-2xl md:mx-auto lg:max-w-7xl lg:mx-auto lg:hidden">
+      <div id="nav-home-sm" class="max-w-xl mx-auto md:max-w-2xl lg:max-w-7xl lg:hidden">
         <div class="lg:w-full">
-          <div class="h-10 m-10 flex justify-between items-center bg-[#7B5996] rounded-xl p-1 shadow-xl md:h-14">
-            <div id="titulo-pagina" class="w-[40px] h-[40px] hidden items-center transition-all duration-300 ease-in-out active:-translate-x-1 hover:-translate-x-1">
+          <div class="h-10 m-10 flex justify-between items-center bg-[#010409] rounded-xl p-1 shadow-xl md:h-14">
+            <div id="titulo-pagina" class="w-[40px] h-[40px] hidden items-center transition-all active:-translate-x-1 hover:-translate-x-1">
               <button id="arrowBtn">
-                <i class="bx bx-left-arrow-alt text-4xl text-white md:text-5xl transition-all duration-200 ease-in-out hover:text-purple-500"></i>
+                <i class="bx bx-left-arrow-alt text-4xl text-white md:text-5xl transition-all hover:text-gray-400"></i>
               </button>
             </div>
             <div class="ml-4">
               <h4 class="text-white font-semibold text-base md:text-xl ">
-                <a class="transition-all duration-200 ease-in-out hover:text-purple-500" onclick="scrollUp()" href="#home">MYLO MOVIES</a>
+                <a class="transition-all hover:text-gray-400" onclick="scrollUp()" href="#home">MYLO MOVIES</a>
               </h4>
             </div>
             <div class="w-[40px] h-[40px] mr-3 flex items-center">
               <button id="menu-icon">
-                <i id="icon" class="bx bx-menu text-4xl text-white md:text-5xl transition-all duration-200 ease-in-out hover:text-purple-500"></i>
+                <i id="icon" class="bx bx-menu text-4xl text-white md:text-5xl transition-all hover:text-gray-400"></i>
               </button>
             </div>
           </div>
         </div>
-        <nav class="nav-list lg:top-28 lg:max-w-7xl rounded-3xl lg:p-10 list-none text-white font-semibold absolute -top-full w-full h-[100vh] backdrop-blur-sm bg-[#7B5996]/80 z-20 hidden items-center gap-10 flex-col p-20  transition-all duration-500 ease-in-out md:text-2xl">
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><a href="#home">Home</a></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="trending">Trending</button></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="nowPlaying">Now Playing</button></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="popular">Popular</button></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="toprated">Top Rated</button></li>
-          <li class="e transition-all ease-in-out duration-300 hover:-translate-y-1 hover:text-purple-500"><button class="seeMoreBtn" value="upcoming">Upcoming</button></li>
+        <nav class="nav-list lg:top-28 md:max-w-5xl lg:max-w-7xl rounded-3xl lg:p-10 list-none text-white font-semibold absolute -top-full w-full h-[100vh] backdrop-blur-sm bg-gray-700/80 z-20 hidden items-center gap-10 flex-col p-20 transition-all  md:text-2xl">
+          <li class="e transition-all hover:text-gray-500"><a href="#home">Home</a></li>
+          <li class="e transition-all hover:text-gray-500"><button class="seeMoreBtn" value="trending">Trending</button></li>
+          <li class="e transition-all hover:text-gray-500"><button class="seeMoreBtn" value="nowPlaying">Now Playing</button></li>
+          <li class="e transition-all hover:text-gray-500"><button class="seeMoreBtn" value="popular">Popular</button></li>
+          <li class="e transition-all hover:text-gray-500"><button class="seeMoreBtn" value="toprated">Top Rated</button></li>
+          <li class="e transition-all hover:text-gray-500"><button class="seeMoreBtn" value="upcoming">Upcoming</button></li>
         </nav>
       </div>
-      <div id="nav-home-lg" class="hidden lg:flex w-full h-20 shadow-xl backdrop-blur-xl bg-[#261a32] items-center justify-between px-40">
-        <h1 class="z-10 text-white text-2xl font-semibold"><a onclick="scrollUp()" href="#home">MYLO MOVIES</a></h1>
+      <div id="nav-home-lg" class="hidden lg:flex w-full h-20 shadow-xl backdrop-blur-xl bg-[#010409] items-center justify-between px-40">
+        <h1 class="z-10 text-white text-2xl font-semibold transition-all hover:text-gray-500"><a onclick="scrollUp()" href="#home">MYLO MOVIES</a></h1>
         <nav class="ml-10 w-[500px] flex justify-between list-none text-white font-semibold">
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="trending">Trending</button></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="nowPlaying">Now Playing</button></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="popular">Popular</button></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="toprated">Top Rated</button></li>
-          <li class="transition-all ease-in-out duration-300 hover:-translate-x-1 hover:text-purple-500"><button class="seeMoreBtn" value="upcoming">Upcoming</button></li>
+          <li class="transition-all hover:text-gray-500"><button class="seeMoreBtn" value="trending">Trending</button></li>
+          <li class="transition-all hover:text-gray-500"><button class="seeMoreBtn" value="nowPlaying">Now Playing</button></li>
+          <li class="transition-all hover:text-gray-500"><button class="seeMoreBtn" value="popular">Popular</button></li>
+          <li class="transition-all hover:text-gray-500"><button class="seeMoreBtn" value="toprated">Top Rated</button></li>
+          <li class="transition-all hover:text-gray-500"><button class="seeMoreBtn" value="upcoming">Upcoming</button></li>
         </nav>
       </div>
     </header>
 
-    <main id="main-container" class="max-w-xl mx-auto md:max-w-2xl md:mx-auto lg:max-w-7xl lg:mx-auto">
-      <section id="movies-section" class="hidden">
-        <div class="h-24 mx-10 flex flex-col md:flex-row md:justify-between md:items-center md:h-10">
-          <h2 id="titulo_categoria" class="text-white text-4xl font-semibold lg:text-5xl">Trending</h2>
-          <form id="formMovies" class="flex mx-auto mt-10 md:mt-2 md:mx-0 md:justify-between lg:mr-20">
-            <input required id="inputSectionSearch" class="w-[240px] h-[40px] mr-4 bg-[#7B5996] shadow-xl rounded-3xl hover:cursor-pointer placeholder:text-center placeholder:text-base placeholder:font-semibold placeholder:text-[#D5D4FF] lg:w-[400px] lg:h-[45px] transition-all duration-300 ease-in-out focus:lg:w-[450px] focus:md:w-[270px] focus:w-[250px]" type="text" placeholder="Search">
-            <button id="btnSectionSearch"><i class='bx bx-search-alt-2 text-3xl text-white transition-all ease-in-out duration-200 hover:text-purple-500'></i></button>
+    <main id="main-container" class="">
+      <section id="movies-section" class="hidden mx-auto md:px-12 max-w-xl md:max-w-2xl lg:max-w-7xl">
+        <div class="w-full flex flex-col items-center md:flex-row md:justify-between md:pb-5">
+          <h2 id="titulo_categoria" class="text-white text-4xl pb-2 md:pb-0 font-semibold lg:text-5xl">Trending</h2>
+          <form id="formMovies" class="flex py-5 md:py-0">
+            <input required id="inputSectionSearch" class="w-[240px] h-[40px] mr-4 bg-gray-700 shadow-xl rounded-3xl hover:cursor-pointer placeholder:text-center placeholder:text-base placeholder:font-semibold text-center text-[#D5D4FF] lg:w-[400px] lg:h-[45px]" type="text" placeholder="Search">
+            <button id="btnSectionSearch"><i class='bx bx-search-alt-2 text-3xl text-white transition-all ease-in-out duration-200 hover:text-gray-400'></i></button>
           </form>
         </div>
-        <article class="w-[320px] mx-auto my-10 md:w-auto lg:mx-10">
-          <div id="movies-list" class="flex flex-wrap gap-3">
+        <article class="">
+          <div id="movies-list" class="flex justify-center flex-wrap gap-4">
             <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
             </div>
             <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
@@ -84,19 +84,14 @@
             </div>
             <div class="w-[150px] h-[230px] bg-gray-500/60 rounded-3xl lg:w-[180px] lg:h-[260px]">
             </div>
-            <!--
-            <div class="w-[150px] h-[230px] bg-white rounded-3xl lg:w-[180px] lg:h-[260px]">
-              <img class="w-full h-full rounded-3xl" src="">
-            </div>
-            -->
           </div>
-          <div class="flex justify-center mt-5">
-            <button value="1" class="loadMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">Load more</button>
+          <div class="w-full flex justify-center py-5 ">
+            <button value="1" class="loadMoreBtn text-center bg-gray-700 w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all hover:translate-y-2 md:w-[150px] md:h-[55px]">Load more</button>
           </div>
         </article>
       </section>
 
-      <section id="details-section" class="hidden md:h-[100vh] my-10">
+      <section id="details-section" class="hidden h-full md:h-screen mx-auto max-w-xl md:max-w-2xl lg:max-w-7xl">
         <div class="my-10 mx-5 lg:flex lg:justify-center lg:items-center lg:my-0">
           <div class="w-[332px] h-[430px] bg-gray-500/60 mx-auto my-10 rounded-3xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
           </div>
@@ -117,35 +112,12 @@
             </div>
           </div>
         </div>
-        <!--
-        <div class="my-10 mx-5 lg:flex lg:justify-center lg:items-center lg:my-0">
-          <div class="w-[332px] h-[430px]  mx-auto my-10 rounded-3xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
-            <img class="w-full h-full rounded-2xl" src="">
-          </div>
-          <div class="lg:w-[500px] lg:h-[500px]">
-            <div class="text-white text-center md:text-left">
-              <h4 class="text-yellow-500 mb-2 md:text-xl">9.8 / 10</h4>
-              <h2 class="text-3xl font-semibold md:text-4xl">Titulo Pelicula</h2>
-              <p class="mt-5 text-balance md:text-xl">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi sunt adipisci natus porro esse in, sint et optio molestiae rerum, repellat beatae quam quibusdam corporis eius officia recusandae reprehenderit quidem?
-              </p>
-            </div>
-            <h5 class="text-yellow-600 font-semibold ml-5 mt-5 md:ml-0">Etiquetas</h5>
-            <div class="mt-5 h-[45px] flex justify-start gap-2 flex-auto">
-              <span class="w-[115px] h-[40px] bg-[#39234a] rounded-full shadow-xl text-white font-semibold text-center leading-10">Comedy</span>
-              <span class="w-[115px] h-[40px] bg-[#39234a] rounded-full shadow-xl text-white font-semibold text-center leading-10">Comedy</span>
-              <span class="w-[115px] h-[40px] bg-[#39234a] rounded-full shadow-xl text-white font-semibold text-center leading-10">Comedy</span>
-              <span class="w-[115px] h-[40px] bg-[#39234a] rounded-full shadow-xl text-white font-semibold text-center leading-10">Comedy</span>
-            </div>
-          </div>
-        </div>
-        -->
       </section>
 
       <section id="main-banner" class="">
-        <div class="swiper swiperBanner px-5 my-5">
-          <div id="contenedor_banner" class="swiper-wrapper">
-            <div class="swiper-slide flex lg:bg-[#261a32]/80 rounded-3xl my-4">
+        <div class="swiper swiperBanner mt-10 h-full">
+          <div id="contenedor_banner" class="swiper-wrapper h-fit">
+            <div class="flex max-w-7xl mx-auto rounded-3xl my-4">
               <div class="w-[332px] h-[400px] bg-gray-500/60 mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">       
               </div>
               <div class="hidden lg:flex flex-col w-[525px] h-[400px] my-20">
@@ -156,49 +128,33 @@
                 <p class="mb-3 bg-gray-500/60 rounded-xl w-[425px] h-7"></p>
               </div>
             </div>
-            <!--
-            <div class="swiper-slide  flex lg:bg-[#261a32]/80 rounded-3xl my-4">
-              <div class="w-[332px] h-[400px] bg-white mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">
-                <img class="w-full h-full rounded-3xl" src="">
-              </div>
-              <div class="hidden lg:flex flex-col w-[525px] h-[400px] my-20">
-                <h2 class="text-4xl mb-3 text-white font-bold">Titulo <span class="text-xl text-yellow-500 font-thin">4 / 10</span></h2>
-                <p class="text-balance text-xl text-white">Descripcion</p>
-              </div>
-            </div>
-            --> 
           </div>
         </div>
-        <form class="mx-auto flex justify-center md:mb-10">
-          <input required id="inputFormSearch" class="w-[210px] h-[45px] mr-3 bg-[#7B5996] shadow-inner rounded-3xl md:w-[332px] md:h-[50px] hover:cursor-pointer placeholder:text-center placeholder:text-2xl placeholder:font-semibold placeholder:text-[#D5D4FF] transition-all duration-300 ease-in-out lg:w-[450px] focus:lg:w-[500px] focus:md:w-[390px] focus:w-[250px]" type="text" placeholder="Search">
-          <button id="btnSearch"><i class='bx bx-search-alt-2 text-3xl text-white md:text-4xl transition-all ease-in-out duration-200 hover:text-purple-500'></i></button>
+        <form class="mx-auto flex mt-5 justify-center md:mb-10">
+          <input required id="inputFormSearch" class="w-[210px] h-[45px] mr-3 bg-gray-700  shadow-inner rounded-3xl md:w-[332px] md:h-[50px] hover:cursor-pointer text-center text-lg placeholder:font-semibold text-[#D5D4FF] transition-all lg:w-[450px] focus:lg:w-[500px] focus:md:w-[390px] focus:w-[250px]" type="text" placeholder="Search">
+          <button id="btnSearch"><i class='bx bx-search-alt-2 text-3xl text-white md:text-4xl transition-all hover:text-gray-500'></i></button>
         </form>
       </section>
 
-      <section id="main-categories" class="">
-        <div class="swiper swiperCategories">
+      <section id="main-categories" class="max-w-6xl mx-auto px-5 md:px-10 lg:px-0">
+        <div class="swiper swiperCategories max-w-6xl mx-auto">
             <div id="generos" class="swiper-wrapper py-10">    
+              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
+              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
               <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide hidden md:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl"></div>
-              <!--
-              <div class="swiper-slide w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">
-                <button class="py-3">Comedy</button>
-              </div>
-              -->
+              <div class="swiper-slide hidden md:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
+              <div class="swiper-slide hidden lg:block w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-gray-500/60 rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-black md:text-xl"></div>
             </div>
         </div>
       </section>
 
-      <section id="main-sections" class="">
+      <section id="main-sections" class="max-w-6xl mx-auto px-5 md:px-10 lg:px-0">
         <div class="flex flex-col justify-center">
-          <article id="trending" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-red-200 px-5">
-            <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Trending</h2>
+          <article id="trending" class="rounded-xl w-full h-fit my-10 py-5 bg-gradient-to-br from-gray-700 to-red-400 px-5">
+            <h2 class="text-white text-center mx-auto text-3xl font-semibold w-[150px] lg:ml-8 lg:text-left md:text-4xl">Trending</h2>
               <div class="swiper swiperSection">
                 <div id="contenedor-trending" class="swiper-wrapper">
                   <div class="flex justify-center">
@@ -238,27 +194,16 @@
                       </div>  
                     </div>
                   </div>
-                  <!--
-                    <div class="swiper-slide flex justify-center">
-                      <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
-                        <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-                        <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
-                          <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                          <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">4 / 10</span></p>
-                        </div>  
-                      </div>
-                    </div>
-                  -->
                 </div>
                 <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
               </div>
               <div class="flex justify-center mt-5">
-                <button value="trending" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
+                <button value="trending" class="seeMoreBtn bg-gray-700 w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
               </div>
           </article>
           
-          <article id="nowPlaying" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-yellow-200 px-5">
-            <h2 class="text-white text-3xl font-semibold w-[250px] ml-8 md:text-4xl">Now Playing</h2>
+          <article id="nowPlaying" class="rounded-xl my-10 py-5 bg-gradient-to-br from-gray-700 to-yellow-200 px-5">
+            <h2 class="text-white text-center mx-auto text-3xl font-semibold w-[250px] lg:ml-8 lg:text-left md:text-4xl">Now Playing</h2>
             <div class="swiper swiperSection">
               <div id="contenedor-nowPlaying" class="swiper-wrapper">
                 <div class="flex justify-center">
@@ -298,27 +243,17 @@
                     </div>  
                   </div>
                 </div>
-                <!--
-                  <div class="swiper-slide flex justify-center">
-                    <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
-                      <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
-                        <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                        <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">4 / 10</span></p>
-                      </div>  
-                    </div>
-                  </div>
-                -->
+
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
             <div class="flex justify-center mt-5">
-              <button value="nowPlaying" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
+              <button value="nowPlaying" class="seeMoreBtn bg-gray-700 w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
 
-          <article id="popular" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-orange-200 px-5">
-            <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Popular</h2>
+          <article id="popular" class="rounded-xl my-10 py-5 bg-gradient-to-br from-gray-700 to-orange-300 px-5">
+            <h2 class="text-white text-center mx-auto text-3xl font-semibold w-[150px] lg:ml-8 lg:text-left md:text-4xl">Popular</h2>
             <div class="swiper swiperSection">
               <div id="contenedor-popular" class="swiper-wrapper">
                 <div class="flex justify-center">
@@ -358,27 +293,16 @@
                     </div>  
                   </div>
                 </div>
-                <!--
-                  <div class="swiper-slide flex justify-center">
-                    <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
-                      <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
-                        <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                        <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">4 / 10</span></p>
-                      </div>  
-                    </div>
-                  </div>
-                -->
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
             <div class="flex justify-center mt-5 ">
-              <button value="popular" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
+              <button value="popular" class="seeMoreBtn bg-gray-700 w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
           
           <article id="toprated" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-blue-200 px-5">
-            <h2 class="text-white text-3xl font-semibold w-[200px] ml-8 md:text-4xl">Top Rated</h2>
+            <h2 class="text-white text-center mx-auto text-3xl font-semibold w-[200px] lg:ml-8 lg:text-left md:text-4xl">Top Rated</h2>
             <div class="swiper swiperSection">
               <div id="contenedor-toprated" class="swiper-wrapper">
                 <div class="flex justify-center">
@@ -418,27 +342,16 @@
                     </div>  
                   </div>
                 </div>
-                <!--
-                  <div class="swiper-slide flex justify-center">
-                    <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
-                      <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
-                        <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                        <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">4 / 10</span></p>
-                      </div>  
-                    </div>
-                  </div>
-                -->
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
             <div class="flex justify-center mt-5">
-              <button value="toprated" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
+              <button value="toprated" class="seeMoreBtn bg-gray-700 w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
  
           <article id="upcoming" class="rounded-xl my-10 py-5 bg-gradient-to-br from-[#742E8D] to-gray-800 px-5">
-            <h2 class="text-white text-3xl font-semibold w-[150px] ml-8 md:text-4xl">Upcoming</h2>
+            <h2 class="text-white text-center mx-auto text-3xl font-semibold w-[150px] lg:ml-8 lg:text-left md:text-4xl">Upcoming</h2>
             <div class="swiper swiperSection">
               <div id="contenedor-upcoming" class="swiper-wrapper">
                 <div class="flex justify-center">
@@ -478,31 +391,22 @@
                     </div>  
                   </div>
                 </div>
-                <!--
-                  <div class="swiper-slide flex justify-center">
-                    <div class="w-[155px] md:w-[190px] h-[250px] md:h-[350px] my-10 mx-8">
-                      <div class="w-[155px] h-[205px] mb-2 bg-white rounded-3xl md:w-[190px] md:h-[250px]"><img class="w-full h-full rounded-3xl" src="https://image.tmdb.org/t/p/w300/${movie.poster_path}"></div>
-                      <div class="w-[155px] h-[205px] md:w-[190px] md:h-[250px]">
-                        <h3 class="text-center font-semibold text-black text-xl bg-[#D9D9D9] rounded-full mb-4">Titulo</h3>
-                        <p class="text-white text-center bg-yellow-300/50 rounded-full">Rate: <span class="text-base  font-normal">4 / 10</span></p>
-                      </div>  
-                    </div>
-                  </div>
-                -->
               </div>
               <div class="swiper-pagination" style="--swiper-pagination-color:#000"></div>
             </div>
             <div class="flex justify-center mt-5">
-              <button value="upcoming" class="seeMoreBtn bg-[#7B5996] w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all duration-300 ease-in-out hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
+              <button value="upcoming" class="seeMoreBtn bg-gray-700 w-[110px] h-[45px] rounded-full text-white text-base font-bold shadow-xl transition-all hover:translate-y-2 md:w-[150px] md:h-[55px]">See more</button>
             </div>
           </article>
         </div>
       </section>
     </main>
     
-    <footer class="h-10 bg-[#7B5996] flex justify-center opacity-80 backdrop-blur-xl py-4 items-center">
-      <h4 class="font-semibold">Made by Camilo</h4>
-      <a href="https://github.com/mylo2003/mylo-movie-api-project" target="_blank"><i class='bx bxl-github ml-2 text-xl'></i></a>
+    <footer class="h-10 bg-gray-700 flex justify-center items-center py-4">
+      <a class="flex text-gray-300" href="https://github.com/mylo2003/mylo-movie-api-project" target="_blank">
+        <h4 class="font-semibold">Made by Mylo</h4>
+        <i class='bx bxl-github ml-2 text-xl'></i>
+      </a>
     </footer>
     
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>

@@ -28,24 +28,23 @@ const contenedor_banner = document.querySelector('#contenedor_banner');
 
 async function getBannerMain () {
   try { 
-    const { data, status } = await api('movie/top_rated?page=3');
+    const { data, status } = await api('movie/top_rated');
 
     if (status !== 200) throw Error('Error: ' + status);
 
     const banners = data.results;
 
-   
     contenedor_banner.innerHTML = '';
 
     banners.forEach(banner => {
       contenedor_banner.innerHTML += `
-        <div class="swiper-slide flex lg:bg-[#261a32]/80 backdrop-blur-md rounded-3xl">
-          <div id="${banner.id}" class="card w-[332px] h-[400px] bg-gray-500/60 mx-auto my-10 shadow-lg rounded-3xl md:w-[600px] md:h-[700px] md:my-14 lg:w-[400px] lg:h-[450px] lg:mx-16">
-            <img class="w-full h-full rounded-3xl" data-img="https://image.tmdb.org/t/p/w500/${banner.poster_path}">
+        <div class="swiper-slide flex justify-center">
+          <div id="${banner.id}" class="card w-[250px] shadow-lg">
+            <img class="object-cover rounded-xl w-full h-full" data-img="https://image.tmdb.org/t/p/w400/${banner.poster_path}">
           </div>
-          <div class="hidden lg:flex flex-col w-[525px] h-[400px] my-20">
-            <h2 class="text-4xl mb-3 text-white font-bold">${banner.title} <span class="text-xl text-yellow-500 font-thin">${banner.vote_average} / 10</span></h2>
-            <p class="text-balance text-xl text-white">${banner.overview}</p>
+          <div class="hidden w-[500px] h-fit ml-5 py-10 px-10 lg:flex flex-col">
+            <h2 class="text-3xl text-white font-bold">${banner.title} <span class="text-xl text-yellow-500 font-thin">${banner.vote_average} / 10</span></h2>
+            <p class="text-balance text-base text-white">${banner.overview}</p>
           </div>
         </div>
       `;
@@ -78,7 +77,7 @@ async function getCategoriesPreview () {
 
     categories.forEach(gener => {
       generos.innerHTML += `
-        <div class="swiper-slide cate w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[55px] lg:w-[190px] text-center bg-[#22152D] rounded-full shadow-xl text-white font-semibold transition-all duration-100 ease-in-out hover:bg-[#5d3978] md:text-xl">
+        <div class="swiper-slide flex items-center justify-center cate w-[135px] h-[42px] md:h-[50px] md:w-[145px] lg:h-[50px] lg:w-[190px] text-center bg-gray-700 rounded-full shadow-xl text-white font-semibold transition-all hover:bg-black md:text-xl">
           <button id="${gener.id}" value="${gener.name}" class="py-3">${gener.name}</button>
         </div>  
       `;
@@ -323,18 +322,17 @@ async function getMovieById (id) {
 
     container.innerHTML = `
         <div class="my-10 mx-5 lg:flex lg:justify-center lg:items-center lg:my-0">
-          <div class="w-[332px] h-[430px]  mx-auto my-10 rounded-3xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
-            <img class="w-full h-full rounded-2xl" src="https://image.tmdb.org/t/p/w500/${data.poster_path}">
+          <div class="w-[332px] h-[430px] overflow-hidden mx-auto my-10 rounded-xl md:w-[410px] md:h-[500px] md:my-20 lg:mx-10 lg:my-5">
+            <img class="w-full h-full object-cover rounded-xl" src="https://image.tmdb.org/t/p/w500/${data.poster_path}">
           </div>
           <div class="lg:w-[500px] lg:h-[500px]">
-            <div class="text-white text-center md:text-left">
+            <div class="text-white text-center md:text-left lg:text-left">
               <h4 class="text-yellow-500 mb-2 md:text-xl">${data.vote_average} / 10</h4>
-              <h2 class="text-3xl font-semibold md:text-4xl">${data.title}</h2>
-              <p class="mt-5 text-balance md:text-xl">
+              <h2 class="text-white text-3xl font-semibold md:text-4xl">${data.title}</h2>
+              <p class="text-white mt-5 text-balance md:text-xl">
                 ${data.overview}
               </p>
             </div>
-            <h5 class="text-yellow-600 font-semibold ml-5 mt-5 md:ml-0">Tags</h5>
             <div id="tags" class="mt-5 h-[100px] flex justify-start flex-wrap gap-2 flex-auto"> 
             </div>
           </div>
@@ -345,7 +343,7 @@ async function getMovieById (id) {
 
     data.genres.forEach((genre) => {
       tags.innerHTML += `
-        <span class="w-[115px] h-[40px] bg-[#39234a] rounded-full shadow-xl text-white font-semibold text-center leading-10">${genre.name}</span>
+        <span class="w-[115px] h-[40px] bg-gray-700 rounded-full shadow-xl text-white font-semibold text-center leading-10">${genre.name}</span>
       `;
     });
 

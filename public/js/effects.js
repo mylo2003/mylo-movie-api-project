@@ -46,10 +46,10 @@ const swiperBanner = () => {
     effect: "creative",
     creativeEffect: {
       prev: {
-        translate: ["-120%", 0, -500],
+        translate: ["-150%", 0, -500],
       },
       next: {
-        translate: ["120%", 0, -500],
+        translate: ["150%", 0, -500],
       },
     },
   });
